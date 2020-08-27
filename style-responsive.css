@@ -440,3 +440,7 @@ ul.addressText {
   padding: 15px;
   border-radius: 4px;
 }
+
+.fa-check {
+    margin: 10px;
+}
