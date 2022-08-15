@@ -1,291 +1,838 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta chatset="UTF-8">
+  <head>
+    <title>Surasa Moonsan Portfolio</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="HandheldFriendly" content="true">
-
-    <title>Surasa Website</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="fontawesome-free-5.14.0/css/all.css" />
-
-    <link href="style-responsive.css" rel="stylesheet" type="text/css" />
-    <link href="lightbox.min.css" rel="stylesheet" type="text/css" />
-    <script src="lightbox-plus-jquery.min.js"></script>
-
-</head>
-  <body>
-  
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-circle-up"></i></button>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black" style="height: 126px;" id="home">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css">
+
+  </head>
+  <style>
+	html {
+	scroll-behavior: smooth;
+	}
+
+	.lightbrown{
+	color:#a68f8a;
+	}
+	
+	#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: rgb(85, 85, 85);
+	opacity: 50%;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+	}
+
+	.Greeting-wrap {
+	width: 100%;
+	margin-bottom: 30px;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 30px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	border-radius: 20px; 
+	}
+
+	.img-radius {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	border-radius: 20px; 
+	}
+
+/*--------------------------------------------------------------
+#  Experience Resume
+--------------------------------------------------------------*/
+
+/*เส้นตรงแนวตั้ง*/
+.resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: 0px;
+  border-left: 4px solid #562F26;
+  position: relative;
+  top: 50px;
+}
+
+.resume-item::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  left: -12px;
+  border: 4px solid #562F26;;
+  background-color: #ceb5b7;
+}
+/*for image carousel*/
+.fancybox-nav span {
+ visibility: visible;
+}
+
+.fancybox-close {
+  background: url("images/close.png") no-repeat scroll 0 0 transparent;
+  height: 50px;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
+
+.fancybox-next span {
+  background: url("images/right.png") no-repeat scroll center center;
+  height: 50px;
+  width: 50px;
+  right: -5rem;
+}
+
+.fancybox-prev span {
+  background: url("images/left.png") no-repeat scroll center center;
+  height: 50px;
+  width: 50px;
+  left: -5em;
+}
+
+.fancybox-title {
+  padding: 15px 8px;
+}
+
+.fancybox-title h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+figure {
+  background: #fff;
+  margin-bottom: 45px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 2px 10px 0 rgba(0, 0, 0, 0.06);
+}
+
+figure .img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+figure img {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+figure:hover img {
+  -webkit-transform: scale3d(1.2, 1.2, 1);
+  transform: scale3d(1.2, 1.2, 1);
+}
+
+figure:hover .overlay {
+  opacity: 1;
+}
+
+figure:hover .overlay .buttons a {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+figure .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+figure .overlay a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 23px;
+  line-height: 1;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  margin: 4px;
+  -webkit-transform: scale3d(0, 0, 0);
+  transform: scale3d(0, 0, 0);
+  transition: all 400ms;
+}
+
+figure .overlay a:hover {
+  text-decoration: none;
+}
+
+figure .overlay:hover a {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+figure .buttons {
+  position: absolute;
+  top: 45%;
+  left: 24%;
+}
+
+figure figcaption {
+  padding: 20px 25px;
+  margin-top: 0;
+  color: #666;
+}
+
+figure figcaption h4 {
+  margin: 0;
+}
+
+figure figcaption h4 a {
+  color: #02bdd5;
+}
+
+figure figcaption p {
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+
+.gallery {
+  padding-bottom: 5em;
+}
+
+.gallery figure .buttons {
+  left: 40%;
+}
+
+.map-responsive{
+overflow:hidden;
+padding-bottom:60.25%;
+position:relative;
+height:0;
+}
+
+.map-responsive iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+</style>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="background-color: #f0e1e4">
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="icon-chevron-circle-up" style="font-size: 1.8em;"></i></button>  
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+			<div class="container">
+			<div><a class="navbar-brand" href="index.html" style="letter-spacing:2px">&nbsp;&nbsp;&nbsp;Surasa</a></div>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+				<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+				<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+				<li class="nav-item"><a href="#goal-section" class="nav-link"><span>Goal</span></a></li>
+				<li class="nav-item"><a href="#experience-section" class="nav-link"><span>Experience</span></a></li>
+				<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
+				<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
+			</div>
+			</div>
+		</nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	      <div class="slider-item ">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_11.png);">
+	          		<div class="overlay"></div>
+	          	</div>
+				<div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+					<div class="text Greeting-wrap">
+						<span class="subheading">Hello!</span>
+						<span style="width:100%; text-align: center;"><h1 class="mb-4 mt-3"><i class="icon-quote-left" style="font-size: 0.3em; position:absolute"> </i>&nbsp;&nbsp;I'm <span>Surasa Moonsan</span><i class="icon-quote-right" style="font-size: 0.3em; position:absolute;"></i></h1></span>
+						<h3 class="mb-4" style="color:#a68f8a; text-align: center;">A Website Interface Designer.</h3>
+					</div>
+				</div>
+	        	</div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_222.png);">
+	          		<div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text Greeting-wrap">
+		          		<span class="subheading">Favorite Quote:</span>
+						<span style="width:100%; text-align: center;"><h1><i class="icon-quote-left" style="font-size: 0.3em; position:absolute"> </i>&nbsp;&nbsp;<span>Life</span><i class="icon-quote-right" style="font-size: 0.3em; position:absolute;"></i><h3 class="mb-4" >is not a problem to be solved<br><span>, but a reality to be experienced.</h3></h1></span>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+	    </div>
+    </section>
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container"  style="padding-top: 4em;">
+			<div class="row d-flex">
+				<div class="col-md-6 col-lg-5 d-flex">
+					<div class="img-about img d-flex align-items-stretch">
+						<div class="overlay">
+							<img src="images/profile.jpg" class="img d-flex align-self-stretch align-items-center img-radius">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+					<div class="row justify-content-start pb-3">
+						<div class="col-md-12 heading-section ftco-animate">
+							<h1 class="big">About</h1>
+							<h2 class="mb-4">About Me</h2>
+							<h5>2 years experienced as a website interface designer.<br>I can design the phototype and also coding the website.</h5>
+							<ul class="about-info mt-4 px-md-0 px-2">
+							<li class="d-flex"><span>Name:</span> <span>Surasa Moonsan</span></li>
+							<li class="d-flex"><span>Date of birth:</span> <span>December 29, 1994 (27 years old)</span></li>
+							<li class="d-flex"><span>Address:</span> <span>Suan Yai, Mueang Nonthaburi District, Nonthaburi, Thailand.</span></li>
+							<li class="d-flex"><span>Zip code:</span> <span>11000</span></li>
+							<li class="d-flex"><span>Email:</span> <span>surasamoonsan@gmail.com</span></li>
+							<li class="d-flex"><span>Phone: </span> <span>080-392-6351</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="counter-wrap ftco-animate d-flex mt-md-3">
+						<div class="text">
+						<p><a href="https://drive.google.com/drive/folders/1Oca11gwu1NgFKAssYM4m6wpv1vFTb2ke?usp=sharing" target="_blank" class="btn btn-primary py-3 px-3" >Download CV</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </section>
+	<section class="ftco-section" id="goal-section">
+    	<div class="container">
+    		<div class="row justify-content-center py-5 mt-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Goals</h1>
+            <h2 class="mb-4">Goals</h2>
+            <p>My goals and my passion about job.</p>
+          </div>
+        </div>
+    		<div class="row">
+				<div class="col-md-4 col-6 text-center d-flex ftco-animate">
+					<a class="services-1">
+						<span class="icon">
+							<i class="flaticon-analysis"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Responsive Website Design</h3>
+						</div>
+						<h3 style="font-size: 1em;">To be more expert in coding the responsive website.</h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-6 text-center d-flex ftco-animate">
+					<a class="services-1">
+						<span class="icon">
+							<i class="flaticon-flasks"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Creativity<br>&nbsp;</h3>
+						</div>
+						<h3 style="font-size: 1em;">Learn and inspire new things.</h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-6 text-center d-flex ftco-animate">
+					<a class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">DO THE ART<br>&nbsp;</h3>
+						</div>
+						<h3 style="font-size: 1em;">Wish my favorite hobby (Drawing Art) can support my job. </h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-6 text-center d-flex ftco-animate">
+					<a class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Team player<br>&nbsp;</h3>
+						</div>
+						<h3 style="font-size: 1em;">have a good team which everyone help each other.</h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-6 text-center d-flex ftco-animate">
+					<a" class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Fun Workplace<br>&nbsp;</h3>
+						</div>
+						<h3 style="font-size: 1em;">Fun Workplace motivate the employee productivity & heathy.</h3>
+					</a>
+				</div>
+				<div class="col-md-4 col-6 text-center d-flex ftco-animate">
+					<a class="services-1">
+						<span class="icon">
+							<i class="flaticon-ideas"></i>
+						</span>
+						<div class="desc">
+							<h3 class="mb-5">Reasonably Deadline<br>&nbsp;</h3>
+						</div>
+						<h3 style="font-size: 1em;">The task completion needs reasonable deadlines.</h3>
+					</a>
+				</div>
+			</div>
+    	</div>
+    </section>
+    <section class="ftco-section ftco-no-pb" id="experience-section" class="experience-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Experience</h1>
+            <h2 class="mb-4">Experience</h2>
+            <h5>Education and Work experience.</h5>
+          </div>
+        </div>
+    		<div class="row">
+    			<div class="col-md-12" style="padding-bottom: 5em;">
+    				<div class="resume-wrap ftco-animate resume-item">
+    					<span class="date" style="position: absolute; top:-10px;">2020-2022</span>
+    					<h2 style="line-height: 1em;  padding-top: 30px;">Interface Designer</h2>
+    					<h2 style="line-height: 1em">EMR Soft Co., Ltd.</h2>
+						<p style="margin-bottom: 0em; color:#562F26"><i class="icon-play" style="font-size: 1em;"></i> Main Task</p> 
+    					<p style="color:#562F26">
+							- Create the website prototype by using Photoshop.<br>
+							- Coding the website interface by using HTML and CSS.<br>
+							- Coding the printform (Documents that user print from website).
+    					<p style="margin-bottom: 0em; color:#562F26"><i class="icon-play" style="font-size: 1em;"></i> Side Task</p> 
+    					<p style="color:#562F26"> - Collect user requirements and workflow (co-working with user support employees).<br>
+							- Discuss with team to find the solution and the conclusion to fix our program.<br>
+							- Basic manual testing.</p>
+    				</div>
+    				<div class="resume-wrap ftco-animate resume-item">
+    					<span class="date" style="position: absolute; top:-10px;">2013-2019</span>
+    					<h2 style="line-height: 1em;  padding-top: 30px;">Bachelor of Engineering Program in Computer 
+							Engineering (International Program)</h2>
+    					<h2 style="line-height: 1em">King Mongkut’s University of Technology Thonburi<br><br>
+							<a href="https://drive.google.com/drive/folders/1-JDUxzM8eMqPjNZQ43l7tD82KjoEZvh8?usp=sharing" target="_blank" class="btn btn-primary py-3 px-3" title="Download Graduated grade check report">Download Grade</a>
+						</h2>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+	<section class="ftco-section" id="skills-section" style="padding-bottom: 0em">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Skills</h1>
+					<h2 class="mb-4">Skills</h2>
+					<h5>Technical Skills, Additional Skills</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 animate-box" style="padding-bottom: 1.5em;">
+					<div class="ftco-animate">
+						<h5 style="margin-bottom: 0em; color:#562F26"><i class="icon-play" style="font-size: 1em;"></i> Technical Skills : Coding</h5> 
+					</div>
+				</div>
+				<div class="col-md-6 animate-box" style="padding-bottom: 1.5em;">
+					<div class="ftco-animate">
+						<h5 style="margin-bottom: 0em; color:#562F26; text-align:right;"> Tools : Eclipse, Dreamweaver, Visual Studio Code&nbsp;&nbsp;&nbsp;</h5> 
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>HTML</h3>
+						<div class="progress">
+							<div class="progress-bar color-1" role="progressbar" aria-valuenow="100"
+							aria-valuemin="0" aria-valuemax="100" style="width:100%">
+							<span class="lightbrown">100%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<br><h3 class="lightbrown">I do coding by using html <u>fluently</u>.</h3>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>CSS</h3>
+						<div class="progress">
+							<div class="progress-bar color-2" role="progressbar" aria-valuenow="80"
+							aria-valuemin="0" aria-valuemax="100" style="width:80%">
+							<span class="lightbrown">80%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3 class="lightbrown">Mostly can apply css on websit but still need to practice more about responsive website.</h3>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>C</h3>
+						<div class="progress">
+							<div class="progress-bar color-3" role="progressbar" aria-valuenow="80"
+							aria-valuemin="0" aria-valuemax="100" style="width:80%">
+							<span>80%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<br><h3 class="lightbrown">I can create logic condition.</h3>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<h3>SQL</h3>
+						<div class="progress">
+							<div class="progress-bar color-4" role="progressbar" aria-valuenow="20"
+							aria-valuemin="0" aria-valuemax="100" style="width:20%">
+							<span>20%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="progress-wrap ftco-animate">
+						<br><h3 class="lightbrown">I can do Basic SQL.</h3>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<section id="gallery" class="gallery">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 animate-box" style="padding: 1.5em 0em;">
+					<div class="ftco-animate">
+						<h5 style="margin-bottom: 0em; color:#562F26"><i class="icon-play" style="font-size: 1em;"></i> Technical Skills : Design the website phototype</h5> 
+					</div>
+				</div>
+				<div class="col-md-6 animate-box" style="padding: 1.5em 0em;">
+					<div class="ftco-animate">
+						<h5 style="margin-bottom: 0em; color:#562F26; text-align: right;"> Tools : Photoshop&nbsp;&nbsp;&nbsp;</h5> 
+					</div>
+				</div>
+				<div class="col-sm-4 col-12">
+					<figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+						<div class="img-wrapper">
+							<img src="images/exam-1.jpg" class="img-responsive" alt="this is a title" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/exam-1.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-sm-8 col-12">
+					<figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+						<div class="img-wrapper">
+							<img src="images/exam-2.jpg" class="img-responsive" alt="this is a title" style="width:100%; height: 100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/exam-2.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-md-6 animate-box" style="padding: 1.5em 0em;">
+					<div class="ftco-animate">
+						<h5 style="margin-bottom: 0em; color:#562F26"><i class="icon-play" style="font-size: 1em;"></i> Additional Skills : Drawing Art</h5> 
+					</div>
+				</div>
+				<div class="col-md-6 animate-box" style="padding: 1.5em 0em;">
+					<div class="ftco-animate">
+						<h5 style="margin-bottom: 0em; color:#562F26; text-align: right;"> Tools : Photoshop&nbsp;&nbsp;&nbsp;</h5> 
+					</div>
+				</div>
+				<div class="col-sm-4 col-4	">
+					<figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+						<div class="img-wrapper">
+							<img src="images/item-1.jpg" class="img-responsive" alt="this is a title" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/item-1.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-sm-4 col-4">
+					<figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+						<div class="img-wrapper justify-content-center align-items-center">
+							<img src="images/item-2.jpg" class="img-responsive" alt="this is a title" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/item-2.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-sm-4 col-4">
+					<figure class="wow fadeInLeft animated animated" data-wow-duration="500ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+						<div class="img-wrapper">
+							<img src="images/item-3.jpg" class="img-responsive" alt="" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/item-3.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-sm-4 col-4">
+					<figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="700ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: none; -webkit-animation-name: none;">
+						<div class="img-wrapper">
+							<img src="images/item-4.jpg" class="img-responsive" alt="" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/item-4.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-sm-4 col-4">
+					<figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 900ms; -webkit-animation-delay: 900ms; animation-name: none; -webkit-animation-name: none;">
+						<div class="img-wrapper">
+							<img src="images/item-5.jpg" class="img-responsive" alt="" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/item-5.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-sm-4 col-4">
+					<figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1100ms" style="visibility: hidden; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 1200ms; -webkit-animation-delay: 1200ms; animation-name: none; -webkit-animation-name: none;">
+						<div class="img-wrapper">
+							<img src="images/item-6.jpg" class="img-responsive" alt="" style="width:100%">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox" href="images/item-6.jpg" style="padding:5px">Demo</a>
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<h5 style="text-align:center;"><a href="https://drive.google.com/drive/folders/1mKJ3TyAPNvYB4H5TLtn0q4j_tpeiUV3i?usp=sharing" target="_blank" style="color:#fc8395; text-decoration:underline;">Click this link to see more picture  </a></h5>
+				</div>
+			</div>
+		</div>
+	</section>  
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
-        <a class="navbar-brand logo" href="#">
-          <span>Trust in yourself</span>
-        </a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav menu">
-            <li class="nav-item active">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#profile">Profile</a>
-            </li>
-              <li class="nav-item active">
-              <a class="nav-link" href="#sample">Sample</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#oldWork">OldWork</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#artwork">ArtWork</a>
-            </li>
-           <!--  <li class="nav-item active">
-              <a class="nav-link" href="#address">Contact</a>
-            </li>-->
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-    <div class="container">
-      <div class="header-content" id="home">
-        <div class="header-wrapper">
-          <div class="header-info">
-            <h1>Hi , I'm  <span id="type"></span></h1>
-            <p> Life is not a problem to be solved, but a reality to be experienced.</p>
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+			<h5>Sincerely appreciate your contact</h5>
           </div>
         </div>
-      </div>
-      
-         <div class="profile-content text-center" id="profile">
-        <h1>Profile</h1>
-        <div class="row profile-text">
-          <div class="col-sm">
-            <div class="col"><h3 class="text-sub-header">Skills</h3></div>
-            <div class="row">
-              <div class="col"></div>
-              <div class="col-lg-8 col-md-10 col-sm-12 text-left">
-                  <span style="color: black;"> Communications </span><br>
-                  <span><i class="fas fa-check"></i> Effective listening for Gathering user requirement</span><br>
-                  <span><i class="fas fa-check"></i> Documentation And Writing Skills</span><br>
-                  <span><i class="fas fa-check"></i> Presentation skills</span><br>
-
-                  <span style="color: black;"> Creativity</span><br>
-                  <span><i class="fas fa-check"></i> Optimistic thinking </span><br>
-                  <span><i class="fas fa-check"></i> Able to Initiate new ideas </span><br>
-                  <span><i class="fas fa-check"></i> Making observations</span><br>
-                  <span><i class="fas fa-check"></i> Asking useful question</span><br>
-
-                  <span style="color: black;"> Social </span><br>
-                  <span><i class="fas fa-check"></i> Team player </span><br>
-                  <span><i class="fas fa-check"></i> Open-minded </span><br>
-                  <span><i class="fas fa-check"></i> Result-oriented </span><br>
-                  <span><i class="fas fa-check"></i> Selflessness</span><br>
-
-                  <span style="color: black;"> Hard skills</span><br>
-                  <span><i class="fas fa-check"></i> Provide interesting powerpoint and user manual</span><br>
-                  <span><i class="fas fa-check"></i> Website design using HTML and CSS</span><br>
-                  <span><i class="fas fa-check"></i> Define use cases for system testing</span><br>
-                  <span><i class="fas fa-check"></i> Photoshop</span><br>
-                  <span><i class="fas fa-check"></i> Calculating</span><br>
-                  <span><i class="fas fa-check"></i> PC basic troubleshooting</span><br>
-
-              </div>
-              <div class="col"></div>
-            </div>
+		<div class="align-self-stretch box text-center ftco-animate" valign="top" style="padding-bottom: 3.5rem !important;">
+			<div class="map-responsive">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.7856449853266!2d100.49362389048282!3d13.851901670490964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ba58feb5487%3A0xc5e04426ea4c2a64!2s172%2F8%20Nonthaburi%20Bypath%20Rd%208%2C%20Tambon%20Suan%20Yai%2C%20Amphoe%20Mueang%20Nonthaburi%2C%20Chang%20Wat%20Nonthaburi%2011000!5e0!3m2!1sen!2sth!4v1659976352293!5m2!1sen!2sth" width="600" height="450" style="border:4px solid #c2a49d; padding:1em; border-radius: 25px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Address</h3>
+	            <p>บ้านเลขที่ 172 หมู่2<br>ซอยนนทบุรี2 ตำบลสวนใหญ่ อำเภอเมืองนนทบุรี<br>จังหวัดนนทบุรี 11000</p>
+	          </div>
           </div>
-          <div class="col-sm">
-            <div class="row col-lg-12 col-md-12 col-sm-12""><h3 class="text-sub-header" style="width: 350px;">Basic and need to develope</h3></div>
-            <div class="row">
-              <div class="col"></div>
-              <div class="col-lg-8 col-md-10 col-sm-12 text-left">
-                  <span><i class="fas fa-circle"></i> Mobile application programming</span><br>
-                  <span><i class="fas fa-circle"></i> Responsive website</span>
-              </div>
-            <div class="col"></div>
-            </div>
-            <div class="col" style="padding-top: 30px"><h3 class="text-sub-header">Weak</h3></div>
-            <div class="row">
-              <div class="col"></div>
-              <div class="col-lg-8 col-md-10 col-sm-12 text-left">
-                  <span><i class="fas fa-circle"></i> Automated software testing </span><br>
-                  <span><i class="fas fa-circle"></i> Back-end programming</span><br>
-                  <span><i class="fas fa-circle"></i> API</span><br>
-                  <span><i class="fas fa-circle"></i> Network </span><br>
-              </div>
-            <div class="col"></div>
-            </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p>080-392-6351</p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:surasamoonsan@gmail.com" style="color:#a68f8a"><u>surasamoonsan@gmail.com</u></a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<h3 class="mb-4">Website</h3>
+	            <p><a href="#https://surasamoonsan.github.io/2022-Surasa-Website/" style="color:#a68f8a"><u>My Websit Portfolio</u></a></p>
+	          </div>
           </div>
         </div>
       </div>
-      
-      <div class="sample-content text-center" id="sample">
-          <h1>Sample Website Design</h1>
-          <h5>click on the image to pop up</h5>
-          <div class="row profile-text">
-              <div class="col-sm">
-                  <div class="col"><h3 class="text-sub-header-2" >Company Website</h3></div>
-                  <div class="row">
-                      <div class="col"></div>
-                      <div class="col-md-10 oldWork-margin ">
-                        <a href="webDesign_1.png" data-lightbox="myPicture"><img src="webDesign_1.png" class="img-fluid" alt="Responsive image"></a>
-                      </div>
-                      <div class="col"></div>
-                  </div>
-              </div>
-              <div class="col-sm">
-                  <div class="col"><h3 class="text-sub-header-2">Cake Restaurant Website</h3></div>
-                  <div class="row">
-                      <div class="col"></div>
-                      <div class="col-md-10 oldWork-margin ">
-                        <a href="webDesign2_v2.png" data-lightbox="myPicture"><img src="webDesign2_v2.png" class="img-fluid" alt="Responsive image"></a>
-                      </div>
-                      <div class="col"></div>
-
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-      <div class="oldWork-content text-center" id="oldWork">
-        <h1>My University Work</h1>
-        
-        <h3>Software engineer project : Jira , Justinmind , Photoshop</h3>
-        <div class="row profile-text oldWork-margin">
-          <div class="col-md-5 oldWork-margin zoom">
-            <img src="oldWork1.jpg" class="img-fluid" alt="Responsive image">
-          </div>
-          <div class="col-md-4 oldWork-margin zoom">
-            <img src="oldWork2.jpg" class="img-fluid" alt="Responsive image">
-          </div>
-          <div class="col-md-3 text-left oldWork-margin">
-            <span><i class="fas fa-circle"></i> Data/Class Design</span><br>
-            <span><i class="fas fa-circle"></i> Architectural Design</span><br>
-            <span><i class="fas fa-circle"></i> Component-level Design</span><br>
-            <span><i class="fas fa-circle"></i> User Interface Design</span><br>
-            <span><i class="fas fa-circle"></i> Requirement Validation Matrix</span><br>
-          </div>
-        </div>
-        
-        <h3>Database project : MySQL , Bootstrap , Microsoft Visual Studio</h3>
-        <h5>click on the image to pop up</h5>
-        <div class="row profile-text oldWork-margin">
-          <div class="col-md-4 oldWork-margin zoom">
-             <a href="db_1.png" data-lightbox="myPicture"><img src="db_1.png" class="img-fluid" alt="Responsive image"></a>
-          </div>
-          <div class="col-md-5 oldWork-margin zoom">
-              <a href="db_4.png" data-lightbox="myPicture"><img src="db_4.png" class="img-fluid" alt="Responsive image"></a>
-          </div>
-
-          <div class="col-md-3 text-left oldWork-margin">
-            <span><i class="fas fa-circle"></i> Mission Objective</span><br>
-            <span><i class="fas fa-circle"></i> ER Diagram</span><br>
-            <span><i class="fas fa-circle"></i> Data Dictionary</span><br>
-            <span><i class="fas fa-circle"></i> Complex Form</span><br>
-            <span><i class="fas fa-circle"></i> Website with mySQL database</span><br>
-          </div>
-        </div>
-        
-        <h3>Natural Language Processing Project : Python , DialogFlow</h3>
-        <h5>click on the image to pop up</h5>
-        <div class="row profile-text oldWork-margin">
-          <div class="col-md-4 oldWork-margin zoom">
-              <a href="cb_1.png" data-lightbox="myPicture"><img src="cb_1.png" class="img-fluid" alt="Responsive image"></a>
-          </div>
-          <div class="col-md-5 oldWork-margin zoom">
-              <a href="cb_2.png" data-lightbox="myPicture"><img src="cb_2.png" class="img-fluid" alt="Responsive image"></a>
-          </div>
-          <div class="col-md-3 text-left oldWork-margin">
-            <span><i class="fas fa-circle"></i> Apply Natural Language</span><br>
-            <span><i class="fas fa-circle"></i> Toolkit with Python</span><br>
-            <span><i class="fas fa-circle"></i> Apply Deep Learning Model</span><br>
-
-            <span><i class="fas fa-circle"></i> Chatbot Training</span><br>
-            <span><i class="fas fa-circle"></i> Applying Dialogflow platform</span><br>
-          </div>
-        </div>
-      </div>
-      
-      <div class="artwork-content text-center" id="artwork">
-        <h1>Artwork</h1>
-        <h5>(hover over to pause)</h5>
-        <h5><a href="https://drive.google.com/drive/folders/1mKJ3TyAPNvYB4H5TLtn0q4j_tpeiUV3i?usp=sharing" target="_blank" style="color:white; text-decoration:underline;">Click this link to see more picture  </a></h5>
-        <div id="wrapper">
-          <div id="image">
-            <div class="image i1"><img src="art1.jpg"></div>
-            <div class="image i2"><img src="art2.jpg"></div>
-            <div class="image i3"><img src="art3.jpg"></div>
-            <div class="image i4"><img src="art4.jpg"></div>
-            <div class="image i5"><img src="art5.jpg"></div>
-            <div class="image i6"><img src="art6.jpg"></div>
-            <div class="image i7"><img src="art7.jpg"></div>
-            <div class="image i8"><img src="art8.jpg"></div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="address">
+    </section>
+    <footer class="ftco-footer ftco-section"> 
       <div class="container">
-        <h1 id="heading">Contact</h1>
-        <ul class="addressText">
-          <li class="number-content">
-            <i class="fas fa-phone"></i>  &nbsp;&nbsp;
-            089-286-3330<br>
-            <i class="fas fa-envelope"></i> &nbsp;&nbsp;
-            surasa.moonsan@gmail.com
-          </li>
-          <li class="number-content">
-            <i class="fas fa-home"></i>
-            &nbsp;&nbsp;
-            23, Soi Liang Mueang Nonthaburi 5 Bypass, 2/6 intersection, Suan Yai, Mueang Nonthaburi District, Nonthaburi 11000
-          </li>
-        </ul>
+        <div class="row mb-5" >
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                <li><a href="#goal-section"><span class="icon-long-arrow-right mr-2"></span>Goal</a></li>
+                <li><a href="#experience-section"><span class="icon-long-arrow-right mr-2"></span>Experience</a></li>
+                <li><a href="#skills-section"><span class="icon-long-arrow-right mr-2"></span>Skills</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Contact</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker" style="color:white"></span><span class="text">บ้านเลขที่ 172 หมู่2 ซอยนนทบุรี2 ตำบลสวนใหญ่ อำเภอเมืองนนทบุรี จังหวัดนนทบุรี 11000</span></li>
+	                <li><a href="#"><span class="icon icon-phone" style="color:white"></span><span class="text">080-392-6351</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope" style="color:white"></span><span class="text">surasamoonsan@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <script>
-      var typed = new Typed('#type', {
-        // Waits 1000ms after typing "First"
-        strings: ['Surasa.', 'A Web Designer.', 'A Tester.'],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 100,
-        fadeout: true,
-      })
-      
-      //Get the button
-      var mybutton = document.getElementById("myBtn");
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function() {scrollFunction()};
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/main.js"></script>
+  <!--for image carousel-->
+  <script src="plugins/jQurey/jquery.min.js"></script>
+  <script src="plugins/form-validation/jquery.form.js"></script> 
+  <script src="plugins/form-validation/jquery.validate.min.js"></script>
+  <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/wow-js/wow.min.js"></script>
+  <script src="plugins/slider/slider.js"></script>
+  <script src="plugins/facncybox/jquery.fancybox.js"></script>
+  <script>
+		
+	//Get the button
+	var mybutton = document.getElementById("myBtn");
 
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
 
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
+	function scrollFunction() {
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		mybutton.style.display = "block";
+	} else {
+		mybutton.style.display = "none";
+	}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+	}
+
+	//for imahe carousel
+	jQuery(document).ready(function(){
+	"use strict";
+	new WOW().init();
+
+	(function(){
+	jQuery('.smooth-scroll').scrollingTo();
+	}());
+
+	});
+
+	// fancybox
+	$(".fancybox").fancybox(
+	{
+		padding: 0,
+
+		openEffect : 'elastic',
+		openSpeed  : 450,
+
+		closeEffect : 'elastic',
+		closeSpeed  : 350,
+
+		closeClick : true,
+		helpers : {
+			title : { 
+				type: 'inside' 
+			},
+			overlay : {
+				css : {
+					'background' : 'rgba(0,0,0,0.8)'
+				}
+			}
+		}
+	});
+  </script>
   </body>
 </html>
